@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNo Queue System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>🚪 TechNo Queue</h2>
+    <p class="subtitle">เลือกเกมที่คุณต้องการท้าทายใน Open House 2026</p>
+    
+    <form id="queueForm">
+        <label>ชื่อ-นามสกุล</label>
+        <input type="text" name="name" placeholder="ระบุชื่อของคุณ" required>
+
+        <label>เลือกเกมที่ต้องการเล่น</label>
+        <select name="game" required>
+            <option value="Something Stranger">Something Stranger (กลุ่มที่ 1)</option>
+            <option value="The Forgotten Library">The Forgotten Library (กลุ่มที่ 2)</option>
+            <option value="Project Group 3">ยังไม่ระบุชื่อ (กลุ่มที่ 3)</option>
+            <option value="Protect From Ghost">Protect From Ghost (กลุ่มที่ 4)</option>
+            <option value="Project Group 5">ยังไม่ระบุชื่อ (กลุ่มที่ 5)</option>
+        </select>
+
+        <button type="submit" id="submitBtn">จองคิวเล่นเกม</button>
+    </form>
+    
+    <div id="status"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
