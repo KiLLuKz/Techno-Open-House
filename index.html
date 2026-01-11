@@ -3,34 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechNo Queue System</title>
+    <title>TechGen8 | BPK Queue System</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="bpk.png" sizes="32x32">
 </head>
 <body>
+    <div class="bg-image"></div>
+    <div class="bg-overlay"></div>
 
-<div class="container">
-    <h2>🚪 TechNo Queue</h2>
-    <p class="subtitle">เลือกเกมที่คุณต้องการท้าทายใน Open House 2026</p>
-    
-    <form id="queueForm">
-        <label>ชื่อ-นามสกุล</label>
-        <input type="text" name="name" placeholder="ระบุชื่อของคุณ" required>
+    <div class="container">
+        <div class="header-box">
+            <h2 class="title">TechGen<span>8</span></h2>
+            <p class="subtitle">Bang Pakok Open House 2026</p>
+        </div>
+        
+        <form id="queueForm">
+            <div class="input-group">
+                <label><i class="icon">👤</i> ชื่อ-นามสกุล</label>
+                <input type="text" name="name" placeholder="ระบุชื่อของคุณ..." required>
+            </div>
 
-        <label>เลือกเกมที่ต้องการเล่น</label>
-        <select name="game" required>
-            <option value="Something Stranger">Something Stranger (กลุ่มที่ 1)</option>
-            <option value="The Forgotten Library">The Forgotten Library (กลุ่มที่ 2)</option>
-            <option value="Project Group 3">ยังไม่ระบุชื่อ (กลุ่มที่ 3)</option>
-            <option value="Protect From Ghost">Protect From Ghost (กลุ่มที่ 4)</option>
-            <option value="Project Group 5">ยังไม่ระบุชื่อ (กลุ่มที่ 5)</option>
-        </select>
+            <div class="input-group">
+                <label><i class="icon">🎮</i> เลือกเกมที่ต้องการท้าทาย</label>
+                <select name="game" required>
+                    <option value="" disabled selected>-- เลือกกลุ่มเกม --</option>
+                    <option value="Something Stranger">Something Stranger (กลุ่ม 1)</option>
+                    <option value="The Forgotten Library">The Forgotten Library (กลุ่ม 2)</option>
+                    <option value="Project Group 3">Project Group 3 (กลุ่ม 3)</option>
+                    <option value="Protect From Ghost">Protect From Ghost (กลุ่ม 4)</option>
+                    <option value="Project Group 5">Project Group 5 (กลุ่ม 5)</option>
+                </select>
+            </div>
 
-        <button type="submit" id="submitBtn">จองคิวเล่นเกม</button>
-    </form>
-    
-    <div id="status"></div>
-</div>
+            <button type="submit" id="submitBtn">
+                <span>RESERVE QUEUE</span>
+            </button>
+        </form>
+        
+        <div id="status"></div>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
