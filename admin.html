@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN | TECHNO GEN 8</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000814;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 { font-family: 'Orbitron', sans-serif; color: #ff007f; margin-bottom: 30px; text-align: center; }
+        
+        .control-panel {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .game-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .game-name { 
+            font-weight: bold; 
+            color: #00b4d8; 
+            font-size: 0.9rem; 
+            flex: 1;
+        }
+
+        .btn-next {
+            background: #ff007f; /* สีชมพู Admin */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: 0.2s;
+            white-space: nowrap; /* ห้ามตัดคำในปุ่ม */
+        }
+        .btn-next:active { transform: scale(0.95); }
+        .btn-next:disabled { background: gray; cursor: wait; }
+
+    </style>
+</head>
+<body>
+
+    <h1>ADMIN CONTROL</h1>
+
+    <div class="control-panel">
+        <div class="game-control">
+            <span class="game-name">Bangpakok Stigmatize Properties</span>
+            <button class="btn-next" onclick="nextQueue('Bangpakok Stigmatize Properties', this)">NEXT QUEUE ▶</button>
+        </div>
+
+        <div class="game-control">
+            <span class="game-name">The Forgotten Library</span>
+            <button class="btn-next" onclick="nextQueue('The Forgotten Library', this)">NEXT QUEUE ▶</button>
+        </div>
+
+        <div class="game-control">
+            <span class="game-name">UNTIL FAILURE</span>
+            <button class="btn-next" onclick="nextQueue('UNTIL FAILURE', this)">NEXT QUEUE ▶</button>
+        </div>
+        
+        <div class="game-control">
+            <span class="game-name">Another Room</span>
+            <button class="btn-next" onclick="nextQueue('Another Room', this)">NEXT QUEUE ▶</button>
+        </div>
+
+         <div class="game-control">
+            <span class="game-name">Billy</span>
+            <button class="btn-next" onclick="nextQueue('Billy', this)">NEXT QUEUE ▶</button>
+        </div>
+    </div>
+
+    <script>
+        // *** อย่าลืมเปลี่ยน URL ตรงนี้เป็นของ Apps Script คุณด้วยนะครับ! ***
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwjIi2i5zvxKpvHafwDS-PRIlIK1F7bWkjGf__YouNBrCPx-rIRiHlKvmSDr587OUPqVA/exec';
+
+        function nextQueue(gameName, btn) {
+            if(!confirm(`ยืนยันการจบเกมคิวล่าสุดของ: ${gameName}?`)) return;
+
+            btn.disabled = true;
+            btn.innerText = "Processing...";
+
+            const formData = new FormData();
+            formData.append('action', 'completeQueue');
+            formData.append('game', gameName);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+            .then(res => res.text())
+            .then(response => {
+                alert(response); 
+                btn.disabled = false;
+                btn.innerText = "NEXT QUEUE ▶";
+            })
+            .catch(err => {
+                alert("Error! Connection Failed");
+                btn.disabled = false;
+                btn.innerText = "RETRY";
+            });
+        }
+    </script>
+</body>
+</html>

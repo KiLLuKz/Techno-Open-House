@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TECHNO GEN 8 | M.5/8 BPK</title>
-    <link rel="icon" href="bpk.png">
+    <link rel="icon" href="img/bpk.png">
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="landing-body">
     
     <nav class="navbar">
         <div class="nav-logo">
-            <img src="bpk.png" alt="BPK Logo" class="logo-img">
+            <img src="img/bpk.png" alt="BPK Logo" class="logo-img">
             <span>TECHNO GEN 8</span>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">What is Techno?</a></li>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">What is Techno?</a></li>
             <li><a href="queue.html" class="nav-cta">Join Queue</a></li>
         </ul>
     </nav>
@@ -66,6 +72,13 @@
             <p>© 2026 M.5/8 TECHNO - Bangpakok Wittayakom School</p>
         </footer>
     </main>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>

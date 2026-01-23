@@ -6,7 +6,7 @@
     <title>RESERVE | BLUMINESCENCE</title>
     <link rel="stylesheet" href="css/queue.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="bpk.png">
+    <link rel="icon" href="img/bpk.png">
 </head>
 <body>
     <a href="index.html" class="back-home">← BACK TO HOME</a>
@@ -18,25 +18,74 @@
         <div class="header-box">
             <p class="tagline">✦ TECHNO GEN 8 ✦</p>
             <h2 class="title">QUEUE<span>.SYSTEM</span></h2>
-            <p class="subtitle">PheeMaiLok BokPheeTech | TECHNO GEN 8</p>
+            <p class="subtitle">BPK OPENHOUSE 2026 | TECHNO GEN 8</p>
         </div>
         
         <form id="queueForm">
-            <div class="input-group">
-                <label>IDENTIFICATION</label>
-                <input type="text" name="name" placeholder="กรอกชื่อ-นามสกุลของคุณ" required>
+            <div class="input-section">
+                <label class="section-label">1. IDENTIFICATION</label>
+                <input type="text" name="name" placeholder="กรอกชื่อ-นามสกุลของคุณ" required class="name-input">
             </div>
 
-            <div class="input-group">
-                <label>SELECT MISSION</label>
-                <select name="game" required>
-                    <option value="" disabled selected>-- เลือกกลุ่มเกม --</option>
-                    <option value="Something Stranger">Something Stranger (กลุ่ม 1)</option>
-                    <option value="The Forgotten Library">The Forgotten Library (กลุ่ม 2)</option>
-                    <option value="Project Group 3">Project Group 3 (กลุ่ม 3)</option>
-                    <option value="Protect From Ghost">Protect From Ghost (กลุ่ม 4)</option>
-                    <option value="Project Group 5">Project Group 5 (กลุ่ม 5)</option>
-                </select>
+            <div class="input-section">
+                <label class="section-label">2. SELECT MISSION</label>
+                
+                <div class="game-grid">
+                    <label class="game-card">
+                        <input type="radio" name="game" value="Bangpakok Stigmatize Properties" required>
+                        <div class="card-content">
+                            <img src="img/Bangpakok Stigmatize Properties.png" alt="Game 1">
+                            <div class="game-info">
+                                <h3>Bangpakok Stigmatize Properties</h3>
+                                <span>Group 1</span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="game-card">
+                        <input type="radio" name="game" value="The Forgotten Library">
+                        <div class="card-content">
+                            <img src="img/THE FORGOTTEN LIBRARY.png" alt="Game 2">
+                            <div class="game-info">
+                                <h3>The Forgotten Library</h3>
+                                <span>Group 2</span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="game-card">
+                        <input type="radio" name="game" value="UNTIL FAILURE">
+                        <div class="card-content">
+                            <img src="img/UNTIL FAILURE.png" alt="Game 3">
+                            <div class="game-info">
+                                <h3>UNTIL FAILUREs</h3>
+                                <span>Group 3</span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="game-card">
+                        <input type="radio" name="game" value="Another Room">
+                        <div class="card-content">
+                            <img src="img/AnotherRoomPoster.png" alt="Game 4">
+                            <div class="game-info">
+                                <h3>Another Room</h3>
+                                <span>Group 4</span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="game-card">
+                        <input type="radio" name="game" value="Billy">
+                        <div class="card-content">
+                            <img src="img/BILLY.png" alt="Game 5">
+                            <div class="game-info">
+                                <h3>Billy</h3>
+                                <span>Group 5</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
             </div>
 
             <button type="submit" id="submitBtn">
