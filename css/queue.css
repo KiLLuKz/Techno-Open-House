@@ -67,16 +67,30 @@ body {
 
 .header-box { text-align: center; margin-bottom: 2rem; }
 .tagline { color: var(--light-blue); letter-spacing: 3px; font-size: 0.7rem; margin-bottom: 10px; }
+/* --- แก้ไขส่วน Title ให้ไม่ล้นจอ --- */
 .title { 
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2rem, 5vw, 2.5rem);
+    
+    /* 1. ปรับขนาดขั้นต่ำให้เล็กลงนิดนึง (จาก 2rem -> 1.8rem) เพื่อให้พอดีจอมือถือเล็กๆ */
+    font-size: clamp(1.8rem, 6vw, 2.5rem); 
+    
     font-weight: 900;
     letter-spacing: 2px;
+    
     background: linear-gradient(to bottom, #fff, var(--light-blue));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    
+    /* 2. หัวใจสำคัญ: สั่งให้ตัดบรรทัดเมื่อที่เต็ม */
+    display: flex;
+    flex-wrap: wrap;         /* อนุญาตให้คำตกบรรทัดได้ */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางเสมอ */
+    align-items: center;
+    gap: 8px;                /* เว้นระยะห่างระหว่าง QUEUE กับ .SYSTEM */
+    line-height: 1.2;
+    width: 100%;             /* บังคับความกว้างเต็มพื้นที่ */
 }
 .title span { 
     background: none;
@@ -84,6 +98,9 @@ body {
     color: var(--neon-blue); 
     opacity: 1;
     text-shadow: 0 0 15px rgba(144, 224, 239, 0.6);
+    
+    /* 3. สั่งห้ามตัดคำว่า .SYSTEM ขาดออกจากกัน */
+    white-space: nowrap; 
 }
 
 /* --- Input Section --- */
